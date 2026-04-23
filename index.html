@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Project's CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome Library -->
+  <link rel="stylesheet" href="all.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <title>E-commerce Product page</title>
+</head>
+
+<body>
+  <!-- Start header -->
+  <div class="header">
+    <div class="nav">
+      <img class="menu" src="assets/menu.png"></img>
+      <h1>sneakers</h1>
+      <ul>
+        <li>Collections</li>
+        <li>Men</li>
+        <li>Women</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <div class="main">
+      <img class="cart-icon" src="assets/cart.png" >
+      <img class="avatar" src="assets/avatar.jpg" >
+    </div>
+  </div>
+  <!-- End header -->
+  <!-- Start Gallery Overlay -->
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">×</span>
+
+    <button class="perv" onclick="changeSlide(-1)">❮</button>
+    <div class="img-container">
+      <img id="modal-img-rv" src="assets/product-1.jpg">
+      <img id="modal-img">
+    </div>
+    <button class="next" onclick="changeSlide(1)">❯</button>
+
+    <div class="modal-thumbs">
+      <img src="assets/product-1.jpg" onclick="selectModalImage(0)">
+      <img src="assets/product-2.jpg" onclick="selectModalImage(1)">
+      <img src="assets/product-3.jpg" onclick="selectModalImage(2)">
+      <img src="assets/product-4.jpg" onclick="selectModalImage(3)">
+    </div>
+  </div>
+  <!-- End Gallery Overlay -->
+  <!-- Start container -->
+  <div class="container">
+    <div class="product-imgs">
+      <div class="main-img">
+        <img id="main-img" src="assets/product-1.jpg" onclick="openModal()">
+      </div>
+      <div class="thumbnails">
+        <div class="active-img">
+          <img class="thumb active" src="assets/product-1.jpg" onclick="changeImage(this)">
+        </div>
+        <div>
+          <img class="thumb" src="assets/product-2.jpg" onclick="changeImage(this)">
+        </div>
+        <div>
+          <img class="thumb" src="assets/product-3.jpg" onclick="changeImage(this)">
+        </div>
+        <div>
+          <img class="thumb" src="assets/product-4.jpg" onclick="changeImage(this)">
+        </div> 
+      </div>
+    </div>
+
+    <div class="product-info">
+      <h3 class="info-header">Sneaker Company</h3>  
+      <h1>Fall Limited Edition Sneakers</h1>
+      <p>These low-profile sneakers are your perfect casual wear
+        companion. Featuring a durable rubber outer sole, they'll
+        withstand everthing the weather can offer.
+      </p>
+
+      <div class="price-div-rv">
+        <div class="price-div">
+          <span class="price">$125.00</span>
+          <p>50%</p>
+        </div>
+        <span class="old-price">$250.00</span>
+      </div>
+
+      <div class="btns-div">
+        <div class="qt-div">
+          <button class="minus" onclick="minusFunc()"><img class="minus-icon" src="assets/minus.png"></button>
+          <span id="value">0</span>
+          <button class="plus" onclick="plusFunc()"><img class="plus-icon" src="assets/plus.png"></button>
+        </div>
+        <button class="cart-btn"><img  src="assets/cart.png">Add To Cart</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="main.js" defer></script>
+</html>
